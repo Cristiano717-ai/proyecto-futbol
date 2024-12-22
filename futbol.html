@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO Nivel Futbol</title>
+    <link rel="stylesheet" href="futbol.css">
+    <script src="futbol.js" defer></script>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#introduccion">Inicio</a></li>
+            <li><a href="#entrenamientos">Entrenamientos</a></li>
+            <li><a href="#progreso">Visualiza tu Progreso</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="introduccion">
+        <h1>Alcanza tus metas con dedicación</h1>
+        <p>
+            Descubre cómo alcanzar el siguiente nivel en tu entrenamiento deportivo con técnicas avanzadas y una mentalidad ganadora.
+        </p>
+    </header>
+
+    <section id="entrenamientos">
+        <h2>Entrenamientos personalizados</h2>
+        <p>Selecciona una rutina para ver más detalles:</p>
+
+        <select id="seleccion-rutina" onchange="mostrarRutina(this.value)">
+            <option value="">Selecciona una rutina...</option>
+            <option value="calentamiento">Calentamiento</option>
+            <option value="plitometricos">Entrenamientos Plométricos</option>
+            <option value="fuerza">Ejercicios de Fuerza</option>
+        </select>
+
+        <div id="rutina-detalle" class="oculto">
+            <h3 id="titulo-rutina"></h3>
+            <p id="descripcion-rutina"></p>
+        </div>
+
+        <div id="paso-1">
+            <h2>Paso 1: Calentamiento</h2>
+            <p>Movilidad y estiramientos dinámicos para prevenir lesiones.</p>
+            <button onclick="cambiarPaso(1, 1)">Siguiente</button>
+        </div>
+
+        <div id="paso-2" class="oculto">
+            <h2>Paso 2: Plométricos</h2>
+            <p>Entrenamientos para explosión y velocidad.</p>
+            <button onclick="cambiarPaso(2, -1)">Anterior</button>
+            <button onclick="cambiarPaso(2, 1)">Siguiente</button>
+        </div>
+
+        <div id="paso-3" class="oculto">
+            <h2>Paso 3: Fuerza</h2>
+            <p>Rutinas para estabilizar y fortalecer el cuerpo.</p>
+            <button onclick="cambiarPaso(3, -1)">Anterior</button>
+        </div>
+    </section>
+
+    <section id="progreso">
+        <h2>Visualiza tu Progreso</h2>
+        <form>
+            <label for="distancia">¿Cuánto tiempo tardaste en correr cierta distancia?</label>
+            <input type="number" id="distancia" placeholder="Tiempo en segundos">
+            
+            <label for="fuerza">Evalúa tu fuerza en una escala de 1 a 10:</label>
+            <input type="number" id="fuerza" placeholder="Nivel de fuerza">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Escríbenos para obtener rutinas personalizadas:</p>
+        <p>WhatsApp: +57 3127659811</p>
+    </section>
+</body>
+</html>
+
